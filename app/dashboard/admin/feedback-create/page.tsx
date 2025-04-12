@@ -2,6 +2,8 @@
 
 import { useEffect, useState } from "react";
 import axios from "axios";
+import { API_BASE_URL } from "@/lib/api";  // ✅ 确保这句存在
+
 
 interface Task {
   id: number;
@@ -39,7 +41,7 @@ export default function FeedbackCreatePage() {
 
     try {
       await axios.post(
-        `/api/feedback/${selectedTaskId}`,
+        `${API_BASE_URL}/api/feedback/${selectedTaskId}`,
         { elder_name: elderName, comment, rating },
         { headers: { Authorization: `Bearer ${token}` } }
       );

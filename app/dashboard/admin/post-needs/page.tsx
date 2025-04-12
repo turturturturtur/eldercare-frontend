@@ -3,6 +3,7 @@
 import { useState } from "react";
 import { useRouter } from "next/navigation";
 import axios from "axios";
+import { API_BASE_URL } from "@/lib/api";  // ✅ 确保这句存在
 
 export default function PostNeedsPage() {
   const router = useRouter();
@@ -29,7 +30,7 @@ export default function PostNeedsPage() {
 
     try {
       await axios.post(
-        "/api/needs/",
+        "${API_BASE_URL}/api/needs/",
         {
           title: form.serviceType,
           description: form.description,

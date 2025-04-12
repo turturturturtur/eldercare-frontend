@@ -2,6 +2,7 @@
 
 import { useEffect, useState } from "react";
 import axios from "axios";
+import { API_BASE_URL } from "@/lib/api";  // ✅ 确保这句存在
 
 interface ServiceNeed {
     id: number;
@@ -33,7 +34,7 @@ export default function AvailableTasksPage() {
     const handleAccept = async (needId: number) => {
         try {
             await axios.post(
-                "/api/tasks/",
+                "${API_BASE_URL}/api/tasks/",
                 { need_id: needId },
                 { headers: { Authorization: `Bearer ${token}` } }
             );
