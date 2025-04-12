@@ -2,7 +2,7 @@
 
 import { useState } from "react";
 import { useRouter } from "next/navigation";  // ✅ 加上跳转
-
+import { API_BASE_URL } from "@/lib/api";  // 确保你正确引入这个变量
 export default function ForgotPassword() {
   const [email, setEmail] = useState("");
   const [loading, setLoading] = useState(false);
@@ -13,7 +13,7 @@ export default function ForgotPassword() {
     setLoading(true);
 
     try {
-      const res = await fetch("/auth/forgot-password", {
+      const res = await fetch("${API_BASE_URL}/auth/forgot-password", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ email }),

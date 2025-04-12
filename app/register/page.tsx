@@ -4,7 +4,7 @@ import { useState } from "react";
 import { useRouter } from "next/navigation";
 import { CheckCircle, AlertTriangle } from "lucide-react";
 import Link from "next/link";
-
+import { API_BASE_URL } from "@/lib/api";  // 确保你正确引入这个变量
 export default function Register() {
   const router = useRouter();
   const [form, setForm] = useState({
@@ -41,7 +41,7 @@ export default function Register() {
 
     setLoading(true);
     try {
-      const res = await fetch("/auth/register", {
+      const res = await fetch("${API_BASE_URL}/auth/register", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(form),

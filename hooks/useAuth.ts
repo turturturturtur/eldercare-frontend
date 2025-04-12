@@ -1,6 +1,6 @@
 // hooks/useAuth.ts
 import { useEffect, useState } from "react";
-
+import { API_BASE_URL } from "@/lib/api";  // 确保你正确引入这个变量
 
 export interface User {
     id: number;
@@ -15,7 +15,7 @@ export function useAuth() {
   useEffect(() => {
     const token = localStorage.getItem("token");
     if (token) {
-      fetch("/me", {
+      fetch("${API_BASE_URL}/me", {
         headers: { Authorization: `Bearer ${token}` },
       })
         .then((res) => res.json())

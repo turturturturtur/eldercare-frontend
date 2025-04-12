@@ -2,7 +2,7 @@
 
 import { useRouter, useSearchParams } from "next/navigation";
 import { useState } from "react";
-
+import { API_BASE_URL } from "@/lib/api";  // 确保你正确引入这个变量
 export default function VerifyCodePage() {
   const router = useRouter();
   const searchParams = useSearchParams();
@@ -15,7 +15,7 @@ export default function VerifyCodePage() {
   const handleVerify = async (e: React.FormEvent) => {
     e.preventDefault();
 
-    const res = await fetch("/auth/verify-code", {
+    const res = await fetch("${API_BASE_URL}/auth/verify-code", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
