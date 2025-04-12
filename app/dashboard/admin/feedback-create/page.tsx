@@ -25,7 +25,7 @@ export default function FeedbackCreatePage() {
       .get("http://localhost:8000/api/tasks/completed", {
         headers: { Authorization: `Bearer ${token}` },
       })
-      .then((res) => setTasks(res.data))
+      .then((res) => setTasks(res.data as Task[]))
       .catch(() => alert("❌ 获取任务失败，请检查登录状态"));
   }, []);
   
