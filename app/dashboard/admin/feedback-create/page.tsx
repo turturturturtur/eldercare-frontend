@@ -22,7 +22,7 @@ export default function FeedbackCreatePage() {
 
   useEffect(() => {
     axios
-      .get("http://localhost:8000/api/tasks/completed", {
+      .get("/api/tasks/completed", {
         headers: { Authorization: `Bearer ${token}` },
       })
       .then((res) => setTasks(res.data as Task[]))
@@ -39,7 +39,7 @@ export default function FeedbackCreatePage() {
 
     try {
       await axios.post(
-        `http://localhost:8000/api/feedback/${selectedTaskId}`,
+        `/api/feedback/${selectedTaskId}`,
         { elder_name: elderName, comment, rating },
         { headers: { Authorization: `Bearer ${token}` } }
       );

@@ -20,7 +20,7 @@ export default function AvailableTasksPage() {
 
     useEffect(() => {
         axios
-            .get<ServiceNeed[]>("http://localhost:8000/api/needs/", {
+            .get<ServiceNeed[]>("/api/needs/", {
                 headers: { Authorization: `Bearer ${token}` },
             })
             .then((res) => setTasks(res.data))
@@ -33,7 +33,7 @@ export default function AvailableTasksPage() {
     const handleAccept = async (needId: number) => {
         try {
             await axios.post(
-                "http://localhost:8000/api/tasks/",
+                "/api/tasks/",
                 { need_id: needId },
                 { headers: { Authorization: `Bearer ${token}` } }
             );

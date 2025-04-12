@@ -18,7 +18,7 @@ export default function AdminFeedbackPage() {
 
   useEffect(() => {
     if (!token) return;
-    axios.get<Feedback[]>("http://localhost:8000/api/feedback/all", {
+    axios.get<Feedback[]>("/api/feedback/all", {
         headers: { Authorization: `Bearer ${token}` },
       })
       .then((res) => {

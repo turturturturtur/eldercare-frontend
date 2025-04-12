@@ -29,7 +29,7 @@ export default function PostNeedsPage() {
 
     try {
       await axios.post(
-        "http://localhost:8000/api/needs/",
+        "/api/needs/",
         {
           title: form.serviceType,
           description: form.description,

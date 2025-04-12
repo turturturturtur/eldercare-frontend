@@ -15,7 +15,7 @@ export function useAuth() {
   useEffect(() => {
     const token = localStorage.getItem("token");
     if (token) {
-      fetch("http://localhost:8000/me", {
+      fetch("/me", {
         headers: { Authorization: `Bearer ${token}` },
       })
         .then((res) => res.json())

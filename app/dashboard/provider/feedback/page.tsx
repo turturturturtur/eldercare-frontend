@@ -20,7 +20,7 @@ export default function FeedbackPage() {
     if (!token) return;
 
     axios
-      .get("http://localhost:8000/api/feedback/mine", {
+      .get("api/feedback/mine", {
         headers: { Authorization: `Bearer ${token}` },
       })
       .then((res) => {
