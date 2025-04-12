@@ -2,7 +2,7 @@
 
 import { useState } from "react";
 import { useRouter } from "next/navigation";  // ✅ 加上跳转
-import { API_BASE_URL } from "@/lib/api";  // 确保你正确引入这个变量
+import { API_BASE_URL } from "@/lib/api.js";  // 确保你正确引入这个变量
 export default function ForgotPassword() {
   const [email, setEmail] = useState("");
   const [loading, setLoading] = useState(false);

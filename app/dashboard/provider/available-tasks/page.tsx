@@ -2,7 +2,7 @@
 
 import { useEffect, useState } from "react";
 import axios from "axios";
-import { API_BASE_URL } from "@/lib/api";  // ✅ 确保这句存在
+import { API_BASE_URL } from "@/lib/api.js";  // ✅ 确保这句存在
 
 interface ServiceNeed {
     id: number;
