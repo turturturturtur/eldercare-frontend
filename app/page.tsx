@@ -10,7 +10,7 @@ import { logout } from "@/app/utils/auth"; // ✅ 引入封装好的退出函数
 export default function Home() {
   const [isScrolled, setIsScrolled] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
-  const { user } = useAuth();
+  const { user } = useAuth() as { user: { name: string } | null };
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   let timeoutId: NodeJS.Timeout;
 
