@@ -34,7 +34,7 @@ export default function AvailableTasksPage() {
     const handleAccept = async (needId: number) => {
         try {
             await axios.post(
-                "${API_BASE_URL}/api/tasks/",
+                `${API_BASE_URL}/api/tasks/`,
                 { need_id: needId },
                 { headers: { Authorization: `Bearer ${token}` } }
             );

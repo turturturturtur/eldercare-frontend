@@ -15,7 +15,7 @@ export default function VerifyCodePage() {
   const handleVerify = async (e: React.FormEvent) => {
     e.preventDefault();
 
-    const res = await fetch("${API_BASE_URL}/auth/verify-code", {
+    const res = await fetch(`${API_BASE_URL}/auth/verify-code`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",

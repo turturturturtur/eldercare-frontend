@@ -30,7 +30,7 @@ export default function PostNeedsPage() {
 
     try {
       await axios.post(
-        "${API_BASE_URL}/api/needs/",
+        `${API_BASE_URL}/api/needs/`,
         {
           title: form.serviceType,
           description: form.description,
