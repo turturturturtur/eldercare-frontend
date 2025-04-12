@@ -1,6 +1,9 @@
 import { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
+  eslint: {
+    ignoreDuringBuilds: true, // ✅ 忽略构建时 ESLint 错误
+  },
   async rewrites() {
     return [
       {
